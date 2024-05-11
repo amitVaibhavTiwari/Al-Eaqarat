@@ -1,0 +1,150 @@
+@import "../../saas_styles/Mixins";
+@import "../../saas_styles/Variables";
+
+// goto mixins file in saas_styles folder to see what this mixin does
+@include themify($themes) {
+  .work-component {
+    color: themed("medium-text");
+    background-color: themed("light-bg");
+  }
+}
+
+//main css
+.work-component {
+  padding: 2rem 1rem;
+  padding-bottom: 1rem;
+
+  @include laptop_breakpoint {
+    padding: 2rem 3rem;
+  }
+  @include laptop_breakpoint_lg {
+    padding: 2rem calc((100% - 1300px) / 2);
+  }
+}
+
+.work-section-contents {
+  @include after_mobile_breakpoint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  @include tablet_breakpoint {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    place-items: center;
+  }
+  @include laptop_breakpoint {
+    gap: 3rem;
+  }
+}
+
+// main-heading
+.work-main-heading {
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+
+  @include tablet_breakpoint {
+    font-size: 2.2rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 2.4rem;
+  }
+}
+
+// box containing text
+.work-box {
+  @include after_mobile_breakpoint {
+    height: 15rem;
+  }
+  @include tablet_breakpoint {
+    margin-top: 2rem;
+    height: 20rem;
+  }
+  @include laptop_breakpoint {
+    margin-top: 1rem;
+  }
+}
+
+// contents inside the box
+.work-box-item {
+  h2 {
+    font-size: 1rem;
+    font-weight: 900;
+    margin: 0.5rem 0;
+    display: block;
+  }
+  p {
+    display: block;
+    font-size: 0.85rem;
+    line-height: 1.05rem;
+    margin-bottom: 1rem;
+  }
+
+  @include after_mobile_breakpoint {
+    margin-bottom: 1rem;
+    height: 7.5rem;
+  }
+
+  @include tablet_breakpoint {
+    margin-bottom: 1rem;
+    height: 10rem;
+    h2 {
+      font-size: 1.1rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.4rem;
+    }
+  }
+
+  @include laptop_breakpoint {
+    margin-bottom: 2rem;
+    height: 9rem;
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.4rem;
+    }
+  }
+
+  @include laptop_breakpoint-lg {
+    h2 {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+// image containing box
+.work-image-box {
+  display: none;
+
+  @include tablet_breakpoint {
+    display: inline;
+    img {
+      height: 20rem;
+      width: 33vw;
+    }
+  }
+  @include laptop_breakpoint {
+    img {
+      height: 20rem;
+      width: 28vw;
+    }
+  }
+}

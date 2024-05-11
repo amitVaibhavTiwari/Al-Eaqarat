@@ -1,0 +1,88 @@
+@import "../../saas_styles/Mixins";
+@import "../../saas_styles/Variables";
+
+// goto mixins file in saas_styles folder to see what this mixin does
+@include themify($themes) {
+  .single-question-container {
+    color: themed("light-text");
+    background-color: themed("light-bg");
+    border-color: themed("text-medium");
+  }
+}
+
+// main css
+.single-question-container {
+  border-bottom: 0.1rem solid;
+  padding: 0.5rem;
+  width: 90vw;
+  margin: auto;
+
+  @include tablet_breakpoint {
+    padding: 0.8rem;
+  }
+  @include laptop_breakpoint {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.single-question {
+  font-weight: bold;
+  font-size: 0.85rem;
+  position: relative;
+  padding-right: 15%;
+
+  @include tablet_breakpoint {
+    font-size: 1rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 1.1rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 1.2rem;
+  }
+}
+
+.down-icon {
+  position: absolute;
+  right: 0.4rem;
+  top: 20%;
+  height: 1rem;
+  width: 1rem;
+
+  @include tablet_breakpoint {
+    height: 1.1rem;
+    width: 1.1rem;
+  }
+  @include laptop_breakpoint {
+    height: 1.1rem;
+    width: 1.1rem;
+  }
+  @include laptop_breakpoint-lg {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+}
+
+.single-question-ans {
+  margin-top: 0.4rem;
+  font-weight: 100;
+  padding-right: 10%;
+  font-size: 0rem;
+  transition: 0.1s ease-in-out all;
+}
+
+.single-question-ans-visible {
+  font-size: 0.8rem;
+  transition: 0.3s ease-in-out all;
+  @include tablet_breakpoint {
+    font-size: 0.9rem;
+  }
+  @include laptop_breakpoint {
+    margin-top: 0.6rem;
+    font-size: 1rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 1.1rem;
+  }
+}

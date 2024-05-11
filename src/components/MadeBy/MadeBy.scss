@@ -1,0 +1,42 @@
+@import "../../saas_styles/Mixins";
+@import "../../saas_styles/Variables";
+
+// goto mixins file in saas_styles folder to see what this mixin does
+@include themify($themes) {
+  .made-by {
+    color: themed("medium-text");
+    background-color: themed("medium-bg");
+  }
+}
+
+// Main CSS
+.made-by {
+  margin-top: -1px;
+  padding: 0.5rem;
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    font-size: 0.85rem;
+  }
+
+  @include tablet_breakpoint {
+    p {
+      font-size: 0.95rem;
+    }
+  }
+  @include laptop_breakpoint {
+    p {
+      font-size: 1.05rem;
+      gap: 3px;
+    }
+  }
+}
+
+.mera-dil {
+  color: red;
+}
+.meri-beer {
+  color: rgb(255, 153, 0);
+}

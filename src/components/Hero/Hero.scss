@@ -1,0 +1,154 @@
+@import "../../saas_styles/_Mixins.scss";
+@import "../../saas_styles/Variables.scss";
+
+// goto mixins file in saas_styles folder to see what this mixin does
+
+@include themify($themes) {
+  .hero-contents {
+    color: themed("white-color");
+  }
+  .hero-btn {
+    background-color: themed("primary-color");
+    color: themed("white-color");
+  }
+  .hero-search-bar {
+    span {
+      background-color: themed("primary-color");
+      color: themed("white-color");
+    }
+  }
+}
+
+// main-css
+.hero-component {
+  position: relative;
+}
+
+.hero-img {
+  width: 100vw;
+  height: 600px;
+  @include tablet_breakpoint {
+    height: 700px;
+  }
+  @include laptop_breakpoint {
+    height: 95vh;
+    min-height: 580px;
+    max-height: 900px;
+    max-width: 1920px;
+  }
+}
+
+.hero-contents {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  padding: 0.5rem;
+
+  @include tablet_breakpoint {
+    gap: 1.1rem;
+    top: 40%;
+  }
+  @include laptop_breakpoint {
+    top: 35vh;
+    gap: 1.3rem;
+  }
+  @include laptop_breakpoint-lg {
+    gap: 1.5rem;
+  }
+}
+
+.hero-heading-main {
+  font-weight: 900;
+  font-size: 2rem;
+  text-shadow: 0.1em 0.1em 0.1em black;
+
+  @include tablet_breakpoint {
+    font-size: 2.3rem;
+    width: 70%;
+  }
+  @include laptop_breakpoint {
+    font-size: 2.5rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 2.9rem;
+  }
+}
+.hero-sub-heading,
+.hero-heading-bottom {
+  font-size: 0.9rem;
+  text-shadow: 0.1em 0.1em 0.1em black;
+
+  @include tablet_breakpoint {
+    font-size: 1rem;
+    width: 80%;
+  }
+  @include laptop_breakpoint {
+    font-size: 1.1rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 1.25rem;
+  }
+}
+
+.hero-btn {
+  font-size: 0.85rem;
+  padding: 0.4em 0.7rem;
+  border-radius: 0.25rem;
+  @include tablet_breakpoint {
+    font-size: 0.95rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 1.05rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 1.3rem;
+  }
+}
+
+.hero-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  input {
+    font-size: 0.9rem;
+    padding: 0.2rem;
+  }
+  span {
+    font-size: 01rem;
+    padding: 0.4rem;
+  }
+
+  @include tablet_breakpoint {
+    input {
+      font-size: 1rem;
+      width: 15rem;
+    }
+    span {
+      font-size: 1.1rem;
+    }
+  }
+
+  @include laptop_breakpoint {
+    input {
+      font-size: 1.1rem;
+    }
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
+  @include laptop_breakpoint-lg {
+    input {
+      font-size: 1.2rem;
+    }
+    span {
+      font-size: 1.3rem;
+    }
+  }
+}

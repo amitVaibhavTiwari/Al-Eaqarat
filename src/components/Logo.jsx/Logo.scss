@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+@import "../../saas_styles/Mixins.scss";
+@import "../../saas_styles/Variables.scss";
+
+// Main CSS
+.logo {
+  font-size: 1.8rem;
+  font-family: "Cabin", sans-serif;
+  font-weight: 700;
+
+  @include tablet_breakpoint {
+    font-size: 2rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 2.2rem;
+  }
+  @include laptop_breakpoint_lg {
+    font-size: 2.3rem;
+  }
+}

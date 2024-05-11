@@ -1,0 +1,75 @@
+@import "../../saas_styles/Mixins";
+@import "../../saas_styles/Variables";
+
+// goto mixins file in saas_styles folder to see what this mixin does
+@include themify($themes) {
+  .faq-container {
+    color: themed("dark-text");
+    background-color: themed("dark-bg");
+  }
+}
+
+// main css
+.faq-container {
+  padding: 2rem 0.5rem;
+
+  @include tablet_breakpoint {
+    padding: 2.5rem 0.5rem;
+  }
+  @include laptop_breakpoint_lg {
+    padding: 2.5rem calc((100% - 1300px) / 2);
+  }
+}
+
+.faqs-main-heading {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 0.15rem;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+
+  @include tablet_breakpoint {
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 2.4rem;
+  }
+}
+
+.faqs-sub-heading {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  @include tablet_breakpoint {
+    font-size: 0.9rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 1rem;
+  }
+  @include laptop_breakpoint_lg {
+    font-size: 1.1rem;
+  }
+}
+
+.faqs-questions-container {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  @include tablet_breakpoint {
+    gap: 0.8rem;
+  }
+  @include laptop_breakpoint {
+    margin: 0 auto;
+    margin-top: 0.4rem;
+    width: 80%;
+  }
+}

@@ -1,0 +1,203 @@
+@import "../../saas_styles/Mixins";
+@import "../../saas_styles/Variables";
+
+// goto mixins file in saas_styles folder to see what this mixin does
+@include themify($themes) {
+  .testimonials-component {
+    color: themed("medium-text");
+    background-color: themed("medium-bg");
+  }
+
+  .single-testimonial {
+    background-color: themed("light-bg");
+    color: themes("dark-text");
+    border-color: themed("light-text");
+  }
+
+  .testimonials-btns-container {
+    button {
+      color: themed("white");
+      background-color: themed("primary-color");
+    }
+  }
+}
+
+// main css
+
+.testimonials-component {
+  padding: 1.6rem 0.5rem;
+  @include tablet_breakpoint {
+    padding: 2.5rem 0.5rem;
+  }
+}
+.testimonials-heading {
+  font-size: 1.8rem;
+  font-weight: 900;
+  display: block;
+  margin: auto;
+  width: fit-content;
+
+  @include tablet_breakpoint {
+    font-size: 2rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 2.2rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 2.4rem;
+  }
+}
+.testimonials-sub-heading {
+  font-size: 0.85rem;
+  font-weight: 100;
+  display: block;
+  margin: auto;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+
+  @include tablet_breakpoint {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 1rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 1.1rem;
+  }
+}
+
+.single-testimonial {
+  width: 70vw;
+  margin: auto;
+  padding: 1rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  gap: 1.2rem;
+  border-radius: 0.3rem;
+  border-width: 0.05em;
+  border-style: solid;
+  span {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include tablet_breakpoint {
+    gap: 1.3rem;
+    padding: 1.2rem 2rem;
+  }
+  @include laptop_breakpoint {
+    gap: 1.4rem;
+    padding: 2;
+    width: 65vw;
+  }
+  @include laptop_breakpoint-lg {
+    gap: 1.6rem;
+    padding: 2.5;
+    max-width: 845px;
+  }
+}
+
+.reviewer-image {
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+
+  @include tablet_breakpoint {
+    height: 8rem;
+    width: 8rem;
+  }
+  @include laptop_breakpoint {
+    height: 9rem;
+    width: 9rem;
+  }
+  @include laptop_breakpoint-lg {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+
+.review {
+  font-size: 0.85rem;
+  line-height: 1.05rem;
+  text-align: center;
+
+  @include tablet_breakpoint {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+}
+
+.reviewer-name {
+  font-weight: 900;
+  font-size: 1rem;
+
+  @include tablet_breakpoint {
+    font-size: 1.1rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 1.2rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 1.3rem;
+  }
+}
+
+.reviewer-designation {
+  font-weight: 100;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 0.1rem;
+
+  @include tablet_breakpoint {
+    font-size: 0.9rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 1rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 1.1rem;
+  }
+}
+
+.testimonials-btns-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  button {
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    padding: 0.6rem;
+  }
+
+  @include tablet_breakpoint {
+    button {
+      font-size: 1.2rem;
+    }
+  }
+  @include laptop_breakpoint {
+    button {
+      font-size: 1.3rem;
+    }
+  }
+  @include laptop_breakpoint-lg {
+    button {
+      font-size: 1.4rem;
+    }
+  }
+}

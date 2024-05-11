@@ -1,0 +1,42 @@
+@import "./Variables";
+
+// mixins for breakpoints
+@mixin after_mobile_breakpoint {
+  @media (min-width: #{$medium-screen}) {
+    @content;
+  }
+}
+@mixin tablet_breakpoint {
+  @media (min-width: #{$tablet-screen}) {
+    @content;
+  }
+}
+@mixin laptop_breakpoint {
+  @media (min-width: #{$laptop-screen}) {
+    @content;
+  }
+}
+@mixin laptop_breakpoint-md {
+  @media (min-width: #{$laptop-screen-md}) {
+    @content;
+  }
+}
+@mixin laptop_breakpoint-lg {
+  @media (min-width: #{$laptop-screen-lg}) {
+    @content;
+  }
+}
+
+// mixin for theme
+// This themify mixin is responsible to adjust the color according to theme selected by the user. Inside the _Variables partial file add the theme and its colors inside the theme variable and then use this mixin in every stylesheet to add the colors. Add only those colors inside this mixin which you want to change according to theme. For constant colors, use the main CSS.
+@mixin themify($themes) {
+  @each $name, $values in $themes {
+    .#{$name}-theme {
+      $theme-map: $values !global;
+      @content;
+    }
+  }
+}
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

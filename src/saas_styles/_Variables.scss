@@ -1,0 +1,37 @@
+// breakpoints
+// by default we'll make mobile first then according to breakpoints we'll apply css
+$medium-screen: 480px;
+$tablet-screen: 768px;
+$laptop-screen: 1024px;
+$laptop-screen-md: 1280px;
+$laptop-screen-lg: 1400px;
+
+// add all the themes in this themes variable
+$themes: (
+  default: (
+    primary-color: #00ca2c,
+    dark-primary-color: rgb(33, 146, 33),
+    white-color: #ffffff,
+    light-bg: #ffffff,
+    medium-bg: #f1f5f9,
+    dark-bg: #d2d2de,
+    light-text: rgb(53, 53, 53),
+    medium-text: rgb(30, 29, 29),
+    dark-text: black,
+    navlink-hover-color: black,
+    navlink-hover-text: rgb(255, 255, 255),
+  ),
+  dark: (
+    primary-color: #00ca2c,
+    dark-primary-color: rgb(33, 146, 33),
+    white-color: #ffffff,
+    light-bg: #272727,
+    medium-bg: #1a1b1b,
+    dark-bg: #000000,
+    light-text: rgb(223, 219, 219),
+    medium-text: rgb(236, 230, 230),
+    dark-text: rgb(255, 255, 255),
+    navlink-hover-color: rgb(255, 255, 255),
+    navlink-hover-text: rgb(0, 0, 0),
+  ),
+);

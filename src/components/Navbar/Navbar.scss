@@ -1,0 +1,153 @@
+@import "../../saas_styles/Mixins.scss";
+@import "../../saas_styles/Variables.scss";
+
+// goto mixins file in saas_styles folder to see what this mixin does
+@include themify($themes) {
+  nav {
+    color: themed("medium-text");
+    background-color: themed("medium-bg");
+  }
+
+  .navbar-links {
+    li {
+      &:hover {
+        background-color: themed("navlink-hover-color");
+        color: themed("navlink-hover-text");
+      }
+    }
+  }
+
+  .sidebar {
+    background-color: themed("dark-bg");
+    color: themed("medium-text");
+  }
+  .cut-btn {
+    color: themed("medium-text");
+  }
+}
+
+//
+// main CSS
+nav {
+  height: fit-content;
+  padding: 0.8rem 1rem;
+  span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.toggle-btn {
+  font-size: 1.5rem;
+
+  @include tablet_breakpoint {
+    display: none;
+  }
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-links {
+  // for mobile view links will be hidden and will be visible later after mobile
+  display: none;
+
+  @include tablet_breakpoint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    list-style: none;
+    font-size: 1rem;
+    li {
+      padding: 0.3rem;
+      border-radius: 0.25rem;
+    }
+  }
+
+  @include laptop_breakpoint {
+    gap: 2vw;
+    font-size: 1.05rem;
+    li {
+      padding: 0.3rem 0.8rem;
+    }
+  }
+
+  @include laptop_breakpoint-lg {
+    gap: 3rem;
+    font-size: 1.15rem;
+  }
+}
+
+.theme {
+  width: fit-content;
+  font-size: 1.1rem;
+
+  @include tablet_breakpoint {
+    font-size: 1.25rem;
+  }
+  @include laptop_breakpoint {
+    font-size: 1.5rem;
+  }
+  @include laptop_breakpoint-lg {
+    font-size: 1.6rem;
+  }
+}
+
+// Below is sidebar parent visible only on mobile.
+.sidebar-parent {
+  display: block;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: -2000px;
+  bottom: 0;
+  transition: 0.4s ease-in-out all;
+  @include tablet_breakpoint {
+    display: none;
+    pointer-events: none;
+  }
+}
+
+.sidebar-parent-visible {
+  left: 0;
+  transition: 0.4s ease-in-out all;
+}
+// actual sidebar
+.sidebar {
+  position: absolute;
+  z-index: 2;
+  width: 60vw;
+  min-height: 100vh;
+  max-width: 300px;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 1rem;
+  transition: 0.4s ease-in-out all;
+
+  @include tablet_breakpoint {
+    display: none;
+    pointer-events: none;
+  }
+}
+
+.sidebar-links {
+  font-size: 0.9rem;
+  display: flex;
+  flex-flow: column;
+  gap: 1.7rem;
+  list-style: none;
+  li {
+    width: 100%;
+  }
+}
+
+.sidebar-logo {
+  margin-bottom: 3.5rem;
+}
