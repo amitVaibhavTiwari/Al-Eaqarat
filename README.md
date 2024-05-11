@@ -2,7 +2,7 @@
 
 Landing page of a real estate website. Fully responsive built using React.js and SAAS along with context API for state management.
 
-# [🔗 View Deployed Version](https://al-eaqayat.vercel.app/)
+# [🔗 View Deployed Version](https://al-eaqarat.vercel.app/)
 
 ## Tech Used
 
